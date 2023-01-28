@@ -1,0 +1,12 @@
+:root {
+    --white: #FFFFFF;
+    --orange: #E58411;
+    --black: #1E1E1E;
+    --blue: #0D1B39;
+
+		--smartphone: max-width: 320px; /* 320px — 480px мобильные устройства */
+		--pad: max-width: 481px; /* 481px — 768px планшеты */
+		--laptop: max-width: 801px; /* 769px — 1024px маленькие экраны, ноутбуки */
+		--big: max-width: 1025px; /* 1025px — 1200px большие экраны */
+		--large: max-width: 1201px; /* > 1201px очень большие экраны, телевизоры */
+}
