@@ -2,29 +2,34 @@
 </script>
 
 <template>
-
 	<header class="header">
 		<div class="container">
 
 			<nav class="header__nav">
-				<div class="logotype">
-					<a href="#" class="logotype__link">Panto</a>
+				<div class="logo">
+					<a href="#" class="logo__link">Panto</a>
 				</div>
 
 				<ul class="menu menu_header">
-					<li class="menu__item">
-						<a href="#products" class="menu__link">Furniture</a>
+					<li class="menu__item menu__item_drop_down">
+						<a href="#" class="menu__link">Furniture</a>
 						<i class="bi-chevron-down"></i>
-						<ul class="menu menu_submenu">
-							<li class="menu__item">Chair</li>
-							<li class="menu__item">Beds</li>
-							<li class="menu__item">Sofa</li>
-							<li class="menu__item">Lamp</li>
+
+						<ul class="menu menu__submenu">
+							<li class="menu__subitem">Chair</li>
+							<li class="menu__subitem">Bends</li>
+							<li class="menu__subitem">Sofa</li>
+							<li class="menu__subitem">Lamp</li>
 						</ul>
 					</li>
-					<li class="menu__item"><a href="#about" class="menu__link">About Us</a></li>
-					<li class="menu__item"><a href="#footer" class="menu__link">Contacts</a></li>
+					<li class="menu__item"><a href="#" class="menu__link">Shop</a></li>
+					<li class="menu__item"><a href="#" class="menu__link">About Us</a></li>
+					<li class="menu__item"><a href="#" class="menu__link">Contacts</a></li>
 				</ul>
+
+				<button class="header__burger">
+					<i class="bi-list"></i>
+				</button>
 
 				<div class="basket">
 					<i class="basket__icon bi-handbag-fill"></i>
@@ -44,11 +49,11 @@
 					<i class="bi-search"></i>
 				</button>
 			</div>
-
+			
 		</div>
 	</header>
 
-	<main>
+	<!-- <main>
 		<section class="section section_about" id="about">
 			<div class="container">
 				<div class="section__row">
@@ -293,7 +298,7 @@
 				</div>
 			</div>
 		</div>
-	</footer>
+	</footer> -->
 
 </template>
 

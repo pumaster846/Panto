@@ -1,20 +1,30 @@
-@mixin regular {
-    font-family: 'Gilroy', sans-serif;
-    font-weight: 400;
+@mixin regular { font-weight: 400; }
+@mixin medium { font-weight: 500; }
+@mixin bold { font-weight: 700; }
+
+@mixin i-regular { font-family: 'Inter', sans-serif; font-weight: 400; }
+@mixin i-bold { font-family: 'Inter', sans-serif; font-weight: 700; }
+
+@mixin smartphone {
+	@media screen and (max-width: 481px) {
+		@content;
+	}
 }
-@mixin medium {
-    font-family: 'Gilroy', sans-serif;
-    font-weight: 500;
+
+@mixin pad {
+	@media screen and (max-width: 769px) {
+		@content;
+	}
 }
-@mixin bold {
-    font-family: 'Gilroy', sans-serif;
-    font-weight: 700;
+
+@mixin small-laptop {
+	@media screen and (max-width: 1025px) {
+		@content;
+	}
 }
-@mixin i-regular {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-}
-@mixin i-bold {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
+
+@mixin laptop {
+	@media screen and (max-width: 1200px) {
+		@content;
+	}
 }
