@@ -16,32 +16,24 @@ body {
 h1,
 h2,
 h3,
-h4 {
-	margin: 0;
-}
+h4 { margin: 0; }
 
 .container {
 	margin: 0 auto;
 	padding: 0 80px;
 	max-width: 1440px;
 
-	@include small-laptop {
-		padding: 0 60px;
-	}
+	@include small-laptop { padding: 0 60px; }
 
-	@include pad {
-		padding: 0 40px;
-	}
+	@include pad { padding: 0 40px; }
 
-	@include smartphone {
-		padding: 0 20px;
-	}
+	@include smartphone { padding: 0 20px; }
 }
 
 .header {
 	height: 100vh;
 	background: linear-gradient(180deg,
-			rgba(255, 255, 255, 0) 80%,
+			rgba(255, 255, 255, 0) 85%,
 			rgba(255, 255, 255, 1) 100%),
 		url('src/assets/images/header-bg.png') center center no-repeat;
 	background-size: cover;
@@ -55,23 +47,17 @@ h4 {
 	}
 
 	&__burger {
-		display: none;
 		width: 35px;
 		height: 35px;
+		display: none;
 		background: none;
 		border: 1px solid rgba(204, 204, 204, .20);
 		border-radius: 50%;
 		color: var(--white);
 		font-size: 26px;
-		transition: border .5s, transform .5s;
+		transition: border .5s;
 
-		&:hover {
-			border: 1px solid var(--orange);
-		}
-
-		&:active {
-			transform: rotate(90deg);
-		}
+		&:hover { border: 1px solid var(--orange); }
 
 		@include pad {
 			display: block;
@@ -114,7 +100,7 @@ h4 {
 		@include regular;
 		color: rgba(255, 255, 255, .8);
 		font-size: 24px;
-		line-height: 40px;
+		line-height: 39px;
 		text-align: center;
 
 		@include pad {
@@ -128,19 +114,22 @@ h4 {
 		}
 	}
 
-	&__search {
-		margin: 48px auto 0;
-	}
+	&__search { margin: 48px auto 0; }
 }
 
 .logo {
 	@include bold;
 	font-size: 28px;
 
+	&:hover &__link { color: var(--orange); }
+
 	&__link {
 		color: var(--white);
 		text-decoration: none;
+		transition: color .5s;
 	}
+
+	&_dark &__link { color: var(--black); }
 }
 
 .menu {
@@ -148,91 +137,117 @@ h4 {
 	list-style: none;
 
 	&__item {
-		@include regular;
 		color: var(--white);
+		@include regular;
 
-		&_drop_down {
-			position: relative;
+		&_drop_down { position: relative; }
 
-			.menu__link {
-				margin-right: 12px;
-			}
-		}
+		&_drop_down .menu__link { margin-right: 12px; }
+	}
+
+	&__title {
+		color: var(--orange);
+		font-size: 16px;
 	}
 
 	&__link {
-		font-size: 18px;
 		color: var(--white);
+		font-size: 18px;
 		text-decoration: none;
 	}
 
 	&__submenu {
+		width: 100%;
 		display: none;
 		flex-direction: column;
 		position: absolute;
-		width: 100%;
 	}
 
 	&__subitem {
-		cursor: pointer;
 		padding: 8px 0;
-
-		&:hover {
-			background-color: red;
-		}
+		cursor: pointer;
 	}
 
 	&_header {
 		flex-direction: row;
 		align-items: center;
 
-		@include pad {
-			display: none;
-		}
+		@include pad { display: none; }
 	}
 
 	&_header &__item {
+		&:not(:first-child) { margin-left: 50px; }
+	}
 
-		&:not(:first-child) {
-			margin-left: 50px;
+	&_header &__link {
+		transition: color .5s;
+
+		&:hover { color: var(--orange); }
+	}
+
+	&_footer { flex-direction: column; }
+
+	&_footer &__item {
+		&:not(:last-child) { margin-bottom: 16px; }
+
+		@include smartphone { text-align: center }
+	}
+
+	&_footer &__link {
+		@include medium;
+		color: var(--black);
+		font-size: 15px;
+		opacity: 0.8;
+		text-decoration: underline;
+		text-decoration-color: transparent;
+		transition: text-decoration-color .5s;
+
+		&:hover {
+			text-decoration-color: var(--orange);
 		}
 	}
+
+	&_footer &__text { margin-left: 12px; }
 }
 
 .basket {
 	position: relative;
+	padding: 3px 5px;
+	cursor: pointer;
 
 	&__icon {
-		font-size: 28px;
 		color: var(--white);
+		font-size: 28px;
 	}
 
 	&__counter {
+		width: 23px;
+		height: 23px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		position: absolute;
 		top: 5px;
 		right: -10px;
-		width: 25px;
-		height: 25px;
 		border-radius: 50%;
 		color: var(--white);
 		background-color: var(--orange);
-		font-size: 16px;
+		font-size: 14px;
+		user-select: none;
 	}
 
 	@include pad {
-		order: 1;
 		margin: 0 20px 0 auto;
+		order: 1;
 	}
 }
 
 .search {
+	max-width: 345px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	max-width: 345px;
+	position: relative;
 	margin: 42px auto 0;
 	padding: 8px 6px 8px 20px;
 	border: 1px solid rgba(255, 255, 255, 0.6);
@@ -244,13 +259,13 @@ h4 {
 		border: none;
 		outline: none;
 		background: none;
-		color: #ffffff;
 		@include regular;
+		color: var(--white);
 		font-size: 18px;
 
-		&::placeholder {
-			color: #ffffff;
-		}
+		&::placeholder { color: var(--white); }
+
+		@include smartphone { max-width: 150px; }
 	}
 
 	&__button {
@@ -258,71 +273,40 @@ h4 {
 		width: 40px;
 		border: none;
 		border-radius: 50%;
-		color: #ffffff;
-		background-color: #e58411;
+		color: var(--white);
+		background-color: var(--orange);
 		font-size: 16px;
+		cursor: pointer;
 	}
 }
 
-/*
 .section {
-	&_about {
-		padding: 120px 0;
-	}
-
-	&_product {
-		padding: 50px 0;
-		background-color: #F7F7F7;
-	}
 
 	&__row {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-	}
+		justify-content: space-between;
 
-	&__title {
-		@include bold;
-		font-size: 42px;
-		color: var(--black);
-
-		&_centered {
-			margin-top: 5px;
-			text-align: center;
-		}
-	}
-
-	&_about &__title {
-		max-width: 242px;
-		margin-right: 130px;
-		line-height: 50px;
-	}
-
-	&__grid {
-		display: grid;
-	}
-
-	&_about &__grid {
-		grid-template-columns: repeat(3, 284px);
-		gap: 28px;
-	}
-
-	&_product &__grid {
-		grid-template-columns: repeat(4, 268px);
-		gap: 42px;
-	}
-
-	&_footer &__grid {
-		grid-template-columns: repeat(3, 133px);
-		gap: 110px;
+		@include pad { flex-direction: column; }
 	}
 
 	&__column {
-		width: 100%;
+		margin-right: 18px;
+
+		@include pad { margin-right: 0; }
+	}
+
+	&__grid { display: grid; }
+
+	&__title {
+		@include bold;
+		color: var(--black);
+		font-size: 42px;
+		text-transform: capitalize;
 	}
 
 	&__subtitle {
-		margin-top: 2px;
 		@include bold;
 		color: var(--black);
 		font-size: 24px;
@@ -330,7 +314,6 @@ h4 {
 	}
 
 	&__paragraph {
-		margin-top: 23px;
 		@include regular;
 		color: var(--black);
 		font-size: 16px;
@@ -338,94 +321,255 @@ h4 {
 	}
 
 	&__link {
+		position: relative;
 		@include medium;
 		color: var(--orange);
 		font-size: 14px;
 		text-decoration: none;
+
+		&::before,
+		&::after {
+			content: "";
+			width: 10px;
+			height: 3px;
+			position: absolute;
+			transition: .4s ease-in-out all;
+		}
+
+		&:hover {
+			&::before,
+			&::after	{
+				width: calc(100% + 2px);
+			}
+
+			&::before {
+				left: -1px;
+				top: -3px;
+				border-top: 1px solid var(--orange);
+				border-right: 1px solid var(--orange);
+				border-top-right-radius: 20px;
+			}
+	
+			&::after{
+				content: "";
+				right: -1px;
+				bottom: -3px;
+				border-bottom: 1px solid var(--orange);
+				border-left: 1px solid var(--orange);
+				border-bottom-left-radius: 20px;
+			}
+		}
 	}
 
-	&__text {
-		margin-right: 17px;
+	&__link &__text { margin-right: 17px; }
+
+	&_about { padding: 120px 0; }
+
+	&_about &__column {
+		max-width: 250px;
+
+		@include pad { max-width: 100%; }
 	}
 
+	&_about &__title {
+		line-height: 50px;
 
-	&_footer {
-		padding: 118px 108px 229px;
+		@include small-laptop {
+			margin-right: 28px;
+			font-size: 32px;
+			line-height: 35px;
+		}
+
+		@include pad { margin: 0 0 32px; }
+	}
+
+	&_about &__paragraph {
+		margin: 23px 0 14px;
+
+		@include pad { margin: 16px 0 8px; }
+	}
+
+	&_about &__grid {
+		grid-template-columns: repeat(3, 284px);
+		gap: 28px;
+
+		@include laptop {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 14px;
+		}
+
+		@include pad { grid-template-columns: repeat(1, 1fr); }
+	}
+
+	&_carousel {
+		padding: 50px 0;
+		background-color: var(--grey);
+	}
+
+	&_carousel &__title { text-align: center; }
+
+	&_footer { padding: 128px 0 64px; }
+
+	&_footer &__row { justify-content: space-around; }
+
+	&_footer &__column {
+		display: flex;
+		flex-direction: column;
+
+		@include pad {
+			width: 100%;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-around;
+			margin-bottom: 32px;
+		}
+
+		@include smartphone {
+			flex-direction: column;
+			align-items: center;
+		}
 	}
 
 	&_footer &__paragraph {
-		max-width: 310px;
-		margin-top: 29px;
+		max-width: 280px;
+		margin-top: 23px;
+		@include medium;
+
+		@include pad { margin: 0; }
+
+		@include smartphone {
+			margin-top: 16px;
+			text-align: center;
+		}
 	}
 
-	&_footer &__row {
-		align-items: flex-start;
-	}
+	&_footer &__grid {
+		grid-template-columns: repeat(3, 100px);
+		gap: 90px;
 
+		@include small-laptop { gap: 45px; }
+
+		@include pad {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 35px;
+		}
+
+		@include smartphone {
+			grid-template-columns: repeat(1, 1fr);
+			gap: 32px;
+		}
+	}
 }
 
 .carousel {
 	position: relative;
 
 	&__panel {
-		margin: 38px auto 80px;
+		max-width: 360px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		margin: 38px auto 0;
+		padding: 6px;
+		border-radius: 44px;
+		background: #EEEEEE;
+
+		@include smartphone {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+
+	&__button {
+		padding: 12px 21.5px;
+		background: none;
+		border: none;
+		border-radius: 32px;
+		@include medium;
+		font-size: 18px;
+		cursor: pointer;
+
+		&:hover {
+			transition: color .5s;
+			color: var(--orange);
+		}
+
+		&_active { background-color: var(--white); }
+	}
+
+	&__inner {
+		display: grid;
+		grid-template-columns: repeat(4, 270px);
+		gap: 50px;
+		position: relative;
+		margin-top: 80px;
+		padding: 0 25px;
+		border-radius: 20px;
+		overflow-x: hidden;
+
+		@media screen and (max-width: 1440px) {
+			&::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(90deg,
+						rgba(255, 255, 255, 0) 90%,
+						rgb(237, 237, 237, .7) 100%);
+			}
+		}
 	}
 
 	&__control {
 		width: 50px;
 		height: 50px;
 		position: absolute;
-		top: 55%;
-		z-index: 3;
+		top: 40%;
+		z-index: 2;
 		border: none;
 		border-radius: 50%;
 		background-color: #F7F7F7;
-		box-shadow: 0 7px 20px rgba(0, 0, 0, .06);
-		font-size: 20px;
+		box-shadow: 0 0 3px rgba(30, 30, 30, .4);
+		font-size: 25px;
+		cursor: pointer;
+		transition: .5s ease box-shadow;
+		
+		&:hover { box-shadow: 0 0 5px 3px rgba(229, 132, 17, 1); }
 
-		&_prev {
-			left: 15px;
-		}
+		&_prev { left: 5px; }
 
-		&_next {
-			right: 15px;
-		}
-	}
-}
-
-.panel {
-	width: 345px;
-	padding: 6px;
-	border-radius: 44px;
-	background: #EEEEEE;
-
-	&__button {
-		padding: 12px 21.5px;
-		border: none;
-		border-radius: 32px;
-		background: none;
-		@include medium;
-		font-size: 18px;
-
-		&._active {
-			background-color: var(--white);
-		}
+		&_next { right: 5px; }
 	}
 }
 
 .product {
 	&__header {
 		height: 240px;
-		padding: 0 24px;
-		margin-top: 30px;
 		position: relative;
+		margin-top: 30px;
+		padding: 0 24px;
 		border-radius: 20px 20px 0 0;
 		background-color: #FAFAFA;
+
+		&::after {
+			content: "";
+			width: 130px;
+			height: 60px;
+			position: absolute;
+			top: 65%;
+			left: 50%;
+			z-index: 1;
+			background: rgba(0, 0, 0, .1);
+			filter: blur(12px);
+			transform: translateX(-50%);
+		}
 	}
 
 	&__image {
 		position: absolute;
-		top: -45px;
+		top: -30px;
 	}
 
 	&__caption {
@@ -436,20 +580,18 @@ h4 {
 
 	&__category {
 		@include i-regular;
-		font-size: 16px;
 		color: #8D8D8D;
+		font-size: 16px;
 	}
 
 	&__name {
 		margin-top: 10px;
 		@include i-bold;
-		font-size: 21px;
 		color: var(--blue);
+		font-size: 21px;
 	}
 
-	&__rating {
-		margin-top: 6px;
-	}
+	&__rating { margin-top: 6px; }
 
 	&__bottom {
 		display: flex;
@@ -461,15 +603,15 @@ h4 {
 
 	&__price {
 		@include i-bold;
-		font-size: 21px;
 		color: var(--blue);
+		font-size: 21px;
 	}
 
 	&__sup {
 		margin-right: 3px;
 		@include i-bold;
-		font-size: 15px;
 		color: var(--blue);
+		font-size: 15px;
 	}
 
 	&__button {
@@ -477,21 +619,15 @@ h4 {
 		height: 45px;
 		border: none;
 		border-radius: 50%;
-		background: var(--blue);
 		color: var(--white);
+		background: var(--blue);
+		box-shadow: 0 0 3px 1px rgba(30, 30, 30, .4);
 		font-size: 22px;
-	}
+		z-index: 1;
+		cursor: pointer;
+		transition: .5s ease box-shadow;
 
-	&__shadow {
-		width: 130px;
-		height: 60px;
-		position: absolute;
-		top: 60%;
-		left: 50%;
-		transform: translateX(-50%);
-		z-index: 5;
-		background: rgba(0, 0, 0, .1);
-		filter: blur(12px);
+		&:hover { box-shadow: 0 0 5px 3px rgba(229, 132, 17, 1); }
 	}
 }
 
@@ -499,10 +635,6 @@ h4 {
 	&__icon {
 		color: #F6B76F;
 
-		&:not(:first-child) {
-			margin-left: 6px;
-		}
+		&:not(:first-child) { margin-left: 6px; }
 	}
 }
-
-*/

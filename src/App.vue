@@ -49,15 +49,18 @@
 					<i class="bi-search"></i>
 				</button>
 			</div>
-			
+
 		</div>
 	</header>
 
-	<!-- <main>
-		<section class="section section_about" id="about">
+	<main>
+		<section class="section section_about">
 			<div class="container">
+
 				<div class="section__row">
-					<h2 class="section__title">Why Choosing Us</h2>
+					<div class="section__column">
+						<h2 class="section__title">Why Choosing Us</h2>
+					</div>
 
 					<div class="section__grid">
 						<article class="section__column">
@@ -97,34 +100,35 @@
 						</article>
 					</div>
 				</div>
+
 			</div>
 		</section>
 
-		<section class="section section_product" id="products">
+		<section class="section section_carousel">
 			<div class="container">
-				<h2 class="section__title section__title_centered">Best Selling Product</h2>
+				<h2 class="section__title">Best Selling Product</h2>
+				
+				<article class="carousel">
+					<div class="carousel__panel">
+						<button class="carousel__button carousel__button_active">Chair</button>
+						<button class="carousel__button">Beds</button>
+						<button class="carousel__button">Sofa</button>
+						<button class="carousel__button">Lamp</button>
+					</div>
 
-				<div class="carousel">
-					<article class="panel carousel__panel">
-						<button class="panel__button _active">Chair</button>
-						<button class="panel__button">Beds</button>
-						<button class="panel__button">Sofa</button>
-						<button class="panel__button">Lamp</button>
-					</article>
+					<div class="carousel__inner">
+						<button class="carousel__control carousel__control_prev">
+							<i class="bi-arrow-left"></i>
+						</button>
 
-					<button class="carousel__control carousel__control_prev">
-						<i class="bi-arrow-left"></i>
-					</button>
-					<button class="carousel__control carousel__control_next">
-						<i class="bi-arrow-right"></i>
-					</button>
+						<button class="carousel__control carousel__control_next">
+							<i class="bi-arrow-right"></i>
+						</button>
 
-					<div class="section__grid">
-						<figure class="product section__column">
-							<div class="product__header">
+						<article class="product">
+							<figure class="product__header">
 								<img src="./assets/images/chair1.png" alt="chair" class="product__image">
-								<div class="product__shadow"></div>
-							</div>
+							</figure>
 
 							<figcaption class="product__caption">
 								<h4 class="product__category">Chair</h4>
@@ -147,13 +151,12 @@
 									</button>
 								</div>
 							</figcaption>
-						</figure>
-
-						<figure class="product section__column">
-							<div class="product__header">
+						</article>
+						
+						<article class="product">
+							<figure class="product__header">
 								<img src="./assets/images/chair2.png" alt="chair" class="product__image">
-								<div class="product__shadow"></div>
-							</div>
+							</figure>
 
 							<figcaption class="product__caption">
 								<h4 class="product__category">Chair</h4>
@@ -171,16 +174,17 @@
 										<sup class="product__sup">$</sup>299
 									</div>
 
-									<button class="product__button"><i class="bi-plus-lg"></i></button>
+									<button class="product__button">
+										<i class="bi-plus-lg"></i>
+									</button>
 								</div>
 							</figcaption>
-						</figure>
-
-						<figure class="product section__column">
-							<div class="product__header">
+						</article>
+						
+						<article class="product">
+							<figure class="product__header">
 								<img src="./assets/images/chair3.png" alt="chair" class="product__image">
-								<div class="product__shadow"></div>
-							</div>
+							</figure>
 
 							<figcaption class="product__caption">
 								<h4 class="product__category">Chair</h4>
@@ -198,16 +202,17 @@
 										<sup class="product__sup">$</sup>519
 									</div>
 
-									<button class="product__button"><i class="bi-plus-lg"></i></button>
+									<button class="product__button">
+										<i class="bi-plus-lg"></i>
+									</button>
 								</div>
 							</figcaption>
-						</figure>
-
-						<figure class="product section__column">
-							<div class="product__header">
+						</article>
+						
+						<article class="product">
+							<figure class="product__header">
 								<img src="./assets/images/chair4.png" alt="chair" class="product__image">
-								<div class="product__shadow"></div>
-							</div>
+							</figure>
 
 							<figcaption class="product__caption">
 								<h4 class="product__category">Chair</h4>
@@ -225,12 +230,15 @@
 										<sup class="product__sup">$</sup>921
 									</div>
 
-									<button class="product__button"><i class="bi-plus-lg"></i></button>
+									<button class="product__button">
+										<i class="bi-plus-lg"></i>
+									</button>
 								</div>
 							</figcaption>
-						</figure>
+						</article>
 					</div>
-				</div>
+				</article>
+
 			</div>
 		</section>
 	</main>
@@ -239,8 +247,8 @@
 		<div class="container">
 			<div class="section__row">
 				<div class="section__column">
-					<div class="logotype logotype_dark">
-						<a href="#" class="logotype__link">Panto</a>
+					<div class="logo logo_dark">
+						<a href="#" class="logo__link">Panto</a>
 					</div>
 
 					<p class="section__paragraph">The advantage of hiring a workspace with us is that givees you comfortable
@@ -248,57 +256,51 @@
 				</div>
 
 				<div class="section__grid">
-					<nav class="section__column">
-						<ul class="menu menu_column">
-							<li class="menu__item">
-								<h3 class="menu__title">Services</h3>
-							</li>
-							<li class="menu__item"><a href="#" class="menu__link">Email Marketing</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">Campaigns</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">Branding</a></li>
-						</ul>
-					</nav>
+					<ul class="menu menu_footer">
+						<li class="menu__item">
+							<h3 class="menu__title">Services</h3>
+						</li>
+						<li class="menu__item"><a href="#" class="menu__link">Email Marketing</a></li>
+						<li class="menu__item"><a href="#" class="menu__link">Campaigns</a></li>
+						<li class="menu__item"><a href="#" class="menu__link">Branding</a></li>
+					</ul>
 
-					<nav class="section__column">
-						<ul class="menu menu_column">
-							<li class="menu__item">
-								<h3 class="menu__title">Furniture</h3>
-							</li>
-							<li class="menu__item"><a href="#" class="menu__link">Beds</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">Chair</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">All</a></li>
-						</ul>
-					</nav>
+					<ul class="menu menu_footer">
+						<li class="menu__item">
+							<h3 class="menu__title">Furniture</h3>
+						</li>
+						<li class="menu__item"><a href="#" class="menu__link">Beds</a></li>
+						<li class="menu__item"><a href="#" class="menu__link">Chair</a></li>
+						<li class="menu__item"><a href="#" class="menu__link">All</a></li>
+					</ul>
 
-					<nav class="section__column">
-						<ul class="menu menu_column">
-							<li class="menu__item">
-								<h3 class="menu__title">Follow Us</h3>
-							</li>
-							<li class="menu__item">
-								<a href="#" class="menu__link">
-									<i class="bi-facebook"></i>
-									<span class="menu__text">Facebook</span>
-								</a>
-							</li>
-							<li class="menu__item">
-								<a href="#" class="menu__link">
-									<i class="bi-twitter"></i>
-									<span class="menu__text">Twitter</span>
-								</a>
-							</li>
-							<li class="menu__item">
-								<a href="#" class="menu__link">
-									<i class="bi-instagram"></i>
-									<span class="menu__text">Instagram</span>
-								</a>
-							</li>
-						</ul>
-					</nav>
+					<ul class="menu menu_footer">
+						<li class="menu__item">
+							<h3 class="menu__title">Follow Us</h3>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="bi-facebook"></i>
+								<span class="menu__text">Facebook</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="bi-twitter"></i>
+								<span class="menu__text">Twitter</span>
+							</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link">
+								<i class="bi-instagram"></i>
+								<span class="menu__text">Instagram</span>
+							</a>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
-	</footer> -->
+	</footer>
 
 </template>
 
